@@ -6,6 +6,7 @@ from .arpl_gan_trainer import ARPLGANTrainer
 from .arpl_trainer import ARPLTrainer
 from .augmix_trainer import AugMixTrainer
 from .base_trainer import BaseTrainer
+from .bootood_trainer import BootoodTrainer #1
 from .cider_trainer import CIDERTrainer
 from .conf_branch_trainer import ConfBranchTrainer
 from .csi_trainer import CSITrainer
@@ -35,7 +36,6 @@ from .ish_trainer import ISHTrainer
 from .palm_trainer import PALMTrainer
 from .t2fnorm_trainer import T2FNormTrainer
 from .reweightood_trainer import ReweightOODTrainer
-from .ascood_trainer import ASCOODTrainer
 
 
 def get_trainer(net, train_loader: DataLoader, val_loader: DataLoader,
@@ -73,7 +73,7 @@ def get_trainer(net, train_loader: DataLoader, val_loader: DataLoader,
             'palm': PALMTrainer,
             't2fnorm': T2FNormTrainer,
             'reweightood': ReweightOODTrainer,
-            'ascood': ASCOODTrainer,
+            'bootood': BootoodTrainer
         }
         if config.trainer.name in ['cider', 'npos']:
             return trainers[config.trainer.name](net, train_loader, val_loader,

@@ -9,6 +9,7 @@ import torch.nn as nn
 import openood.utils.comm as comm
 
 from .bit import KNOWN_MODELS
+from .bootood_net import BootNet #1
 from .conf_branch_net import ConfBranchNet
 from .csi_net import get_csi_linear_layers, CSINet
 from .cider_net import CIDERNet
@@ -37,7 +38,6 @@ from .vit_b_16 import ViT_B_16
 from .wrn import WideResNet
 from .rts_net import RTSNet
 from .palm_net import PALMNet
-from .ascood_net import ASCOODNet
 
 
 def get_network(network_config):
@@ -151,11 +151,6 @@ def get_network(network_config):
                       head=network_config.head,
                       feat_dim=network_config.feat_dim,
                       num_classes=num_classes)
-
-    elif network_config.name == 'ascood_net':
-        network_config.backbone.num_gpus = 1
-        backbone = get_network(network_config.backbone)
-        net = ASCOODNet(backbone=backbone)
 
     elif network_config.name == 'rts_net':
         backbone = get_network(network_config.backbone)
@@ -365,6 +360,10 @@ def get_network(network_config):
         bn = BN_layer(AttnBasicBlock, 2)
         decoder = De_ResNet18_256x256()
         net = {'encoder': encoder, 'bn': bn, 'decoder': decoder}
+
+    elif network_config.name == 'boot_net': #1
+        net = BootNet(num_classes=num_classes)
+        
     else:
         raise Exception('Unexpected Network Architecture!')
 
