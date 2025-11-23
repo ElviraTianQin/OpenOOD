@@ -1,0 +1,5 @@
+postprocessor:
+  name: euc
+  APS_mode: False
+  n_components: null   
+  eps: 1.0e-12

@@ -47,3 +47,10 @@ from .relation_postprocessor import RelationPostprocessor
 from .t2fnorm_postprocessor import T2FNormPostprocessor
 from .reweightood_postprocessor import ReweightOODPostprocessor
 from .adascale_postprocessor import AdaScalePostprocessor
+from .bootood_postprocessor import BootOODPostprocessor
+from .entropy_postprocessor import EntropyPostprocessor
+from .norm_postprocessor import NormPostprocessor
+from .cos_postprocessor import CosinePostprocessor
+from .euc_postprocessor import EuclideanPostprocessor
+from .neco_postprocessor import NecoPostprocessor
+from .mspcos_postprocessor import MSPCosPostprocessor

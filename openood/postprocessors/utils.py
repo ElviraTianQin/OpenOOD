@@ -43,7 +43,12 @@ from .vim_postprocessor import VIMPostprocessor
 from .rts_postprocessor import RTSPostprocessor
 from .gen_postprocessor import GENPostprocessor
 from .relation_postprocessor import RelationPostprocessor
-
+from .bootood_postprocessor import BootOODPostprocessor
+from .entropy_postprocessor import EntropyPostprocessor
+from .norm_postprocessor import NormPostprocessor
+from .cos_postprocessor import CosinePostprocessor
+from .neco_postprocessor import NecoPostprocessor
+from .mspcos_postprocessor import MSPCosPostprocessor
 
 def get_postprocessor(config: Config):
     postprocessors = {
@@ -90,6 +95,13 @@ def get_postprocessor(config: Config):
         'gen': GENPostprocessor,
         'relation': RelationPostprocessor,
         't2fnorm': T2FNormPostprocessor,
+        'bootood': BootOODPostprocessor,
+        'entropy': EntropyPostprocessor,
+        'norm': NormPostprocessor,
+        'cos': CosinePostprocessor,
+        'euc': EuclideanPostprocessor,
+        'neco': NecoPostprocessor,
+        'mspcos': MSPCosPostprocessor
     }
 
     return postprocessors[config.postprocessor.name](config)

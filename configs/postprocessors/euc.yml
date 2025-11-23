@@ -1,0 +1,7 @@
+postprocessor:
+  name: euc
+  APS_mode: False
+  normalize: true
+  eps: 1e-12
+
+

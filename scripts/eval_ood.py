@@ -25,6 +25,7 @@ from openood.networks.npos_net import NPOSNet
 from openood.networks.palm_net import PALMNet
 from openood.networks.t2fnorm_net import T2FNormNet
 from openood.networks.ascood_net import ASCOODNet
+# from openood.networks.bootood_net import BootOODNet
 
 
 def update(d, u):
@@ -137,6 +138,10 @@ for subfolder in sorted(glob(os.path.join(root, 's*'))):
     elif postprocessor_name == 't2fnorm':
         backbone = model_arch(num_classes=num_classes)
         net = T2FNormNet(backbone=backbone, num_classes=num_classes)
+    elif postprocessor_name == 'bootood':
+        backbone = model_arch(num_classes=num_classes)
+        net = BootOODNet(backbone=backbone,
+                     num_classes=num_classes)
     else:
         net = model_arch(num_classes=num_classes)
 

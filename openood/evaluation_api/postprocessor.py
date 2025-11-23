@@ -16,13 +16,16 @@ from openood.postprocessors import (
     RMDSPostprocessor, SHEPostprocessor, CIDERPostprocessor, NPOSPostprocessor,
     GENPostprocessor, NNGuidePostprocessor, RelationPostprocessor,
     T2FNormPostprocessor, ReweightOODPostprocessor, fDBDPostprocessor,
-    AdaScalePostprocessor, IODINPostprocessor, NCIPostprocessor)
+    AdaScalePostprocessor, IODINPostprocessor, NCIPostprocessor, BootOODPostprocessor, 
+    EntropyPostprocessor, NormPostprocessor,CosinePostprocessor,EuclideanPostprocessor,NecoPostprocessor, MSPCosPostprocessor)
+
 from openood.utils.config import Config, merge_configs
 
 postprocessors = {
     'nci': NCIPostprocessor,
     'fdbd': fDBDPostprocessor,
     'ash': ASHPostprocessor,
+    'bootood': BootOODPostprocessor,
     'cider': CIDERPostprocessor,
     'conf_branch': ConfBranchPostprocessor,
     'msp': BasePostprocessor,
@@ -69,6 +72,12 @@ postprocessors = {
     'reweightood': ReweightOODPostprocessor,
     'adascale_a': AdaScalePostprocessor,
     'adascale_l': AdaScalePostprocessor,
+    'entropy': EntropyPostprocessor,
+    'norm': NormPostprocessor,
+    'cos': CosinePostprocessor,
+    'euc': EuclideanPostprocessor,
+    'neco': NecoPostprocessor,
+    'mspcos': MSPCosPostprocessor
 }
 
 link_prefix = 'https://raw.githubusercontent.com/Jingkang50/OpenOOD/main/configs/postprocessors/'
